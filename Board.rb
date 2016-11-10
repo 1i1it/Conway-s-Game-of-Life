@@ -6,10 +6,9 @@ class Board
 
 	def initialize(initial_board=nil)
 		@size = initial_board && initial_board.length || 10
-		@initial_board = initial_board
+		@initial_board = initial_board # used when existing patterns are passed
 		@cells  = []
 		
-
 		if @initial_board
 			@size.times do |x|
 				@cells.push([])
@@ -41,6 +40,7 @@ class Board
 	def num_live_neighbors(x,y)
 		board = @cells
 		n = @size
+		# ruby wraps the board when negative values are involved
 		live_neighbors = board[x-1][y-1].value + 
 		board[x-1][y].value + 
 		board[x-1][(y+1) % n ].value + 
@@ -67,6 +67,7 @@ class Board
 	end
 
 	def output_array()
+		# function used for testing
 		@test_array = []
 		@size.times do |x|
 			@test_array.push([])

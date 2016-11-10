@@ -8,9 +8,11 @@ The universe of the Game of Life is an infinite two-dimensional orthogonal grid 
 https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life
 
 
-In order to run the game, 
+In order to run the game 
 - install ruby
-- run run.rb file in the console
-- You will be prompted to enter existing pattern as array or hit Enter to created randomly populated board 10x10
+- run run.rb file in the console ("ruby run.rb")
+- You will be prompted to enter existing pattern as array (e.g [[0,0,0,0,0],[0,0,1,0,0],[0,0,1,0,0],[0,0,1,0,0],[0,0,0,0,0]]) or hit Enter to created randomly populated board 10x10
 - See patterns change
 - Hit Ctrl+C to stop
+
+Enjoy!

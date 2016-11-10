@@ -25,41 +25,11 @@ def blinker()
 end
 
 def beehive()
-	puts "running beehive"
 	# Still life pattern
+	puts "running beehive"
 	state_one =[[0,0,0,0,0,0],[0,0,1,1,0,0],[0,1,0,0,1,0],[0,0,1,1,0,0],[0,0,0,0,0,0], [0,0,0,0,0,0]]
 	integration_test(state_one, state_one)
 end
 
 blinker()
 beehive()
-
-# class Test
-# 	def initialize()
-# 	end
-# 	def testing(blinker)
-# 		# write tests for some config - simple config, run it 100 times, see what I get
-# 	end
-
-# 	def unitest()
-# 		build_board
-# 		calculate_cell_value
-
-# 	def blinker()
-# 		state_one = [[0,0,0,0,0],[0,0,0,0,0],[0,1,1,1,0],[0,0,0,0,0],[0,0,0,0,0]]
-# 		state_two = [[0,0,0,0,0],[0,0,1,0,0],[0,0,1,0,0],[0,0,1,0,0],[0,0,0,0,0]]
-# 		my_board = Board.new(state_one)
-# 		if 
-# 			Board.cells == state_two
-# 			puts "great"
-# 		else
-# 			puts "bad", Board.cells 
-# 	end
-
-	
-
-# glider = [[0,0,0,0,0],[0,0,1,0,0],[0,0,0,1,0],[0,1,1,1,0],[0,0,0,0,0]]
-
-
-# # testing - create board and make sure there are N cells.
-# if all cells are 0, should return all dead

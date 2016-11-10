@@ -1,10 +1,12 @@
+ALIVE_VALUE = 1
+DEAD_VALUE = 0
 class Cell
 	def initialize(board, x, y, value=nil)
     @myboard, @x, @y = board, x, y
     if value
     	@alive = value
     else
-    	@alive = [0,1].sample
+    	@alive = [DEAD_VALUE, ALIVE_VALUE].sample
     end
     @new_generation_value = nil
   end
@@ -28,22 +30,21 @@ class Cell
   end
 
   def calculate_new_cell_value()
-  	#board = @board.cells
   	neighbor_value = @myboard.num_live_neighbors(@x, @y)
 
 	if !is_alive? #if cell is dead
 		if neighbor_value == 3
-			@new_generation_value = 1
+			@new_generation_value = ALIVE_VALUE
 		else 
-			@new_generation_value = 0
+			@new_generation_value = DEAD_VALUE
 		end
 	else #if cell is alive
 		if neighbor_value < 2
-			@new_generation_value = 0
+			@new_generation_value = DEAD_VALUE
 		elsif neighbor_value > 3
-			@new_generation_value = 0
+			@new_generation_value = DEAD_VALUE
 		else
-			@new_generation_value = 1
+			@new_generation_value = ALIVE_VALUE
 		end
 	end
   end

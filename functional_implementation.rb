@@ -1,11 +1,3 @@
-#IMPROVEMENTS 
-
-#CONSTANTS FOR EVERYTHING, CLASSES FOR BOARD, CELL
-
-# PUT IN FUNCTION THAT GOES OVER BOARD, function gets board and does smth for x, y
-# make initial config be defined by array of coordinates and size (everything else is 0)
-# write tests for some config - simple config, run it 100 times, see what I get
-
 def build_board(width, height)
 	board  = []
 	height.times do |x|
@@ -76,7 +68,6 @@ end
 
 def run
 	size = 5
-	#board = build_board(10, 10)
 	board = [[0,0,0,0,0],[0,0,1,0,0],[0,0,0,1,0],[0,1,1,1,0],[0,0,0,0,0]]
 	while true
 		puts '======='
