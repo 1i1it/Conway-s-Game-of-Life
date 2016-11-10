@@ -1,15 +1,16 @@
 require './Board'
 
-# TODO TO BE ABLE TO PASS PATTERNS
-# create method on Board, that takes an array, and turns each item into an object, setting @alive to received value
 def run
-	my_board = Board.new(5)
-	#size = 5
-	#board = build_board(10, 10)
-	#board = [[0,0,0,0,0],[0,0,1,0,0],[0,0,0,1,0],[0,1,1,1,0],[0,0,0,0,0]]
-
+	blinker = [[0,0,0,0,0],[0,0,0,0,0],[0,1,1,1,0],[0,0,0,0,0],[0,0,0,0,0]]
+	puts "Please put your pattern or press Enter to have random pattern"
+	user_inupt = gets
+	pattern = eval(user_inupt) || nil
+	my_board = Board.new(pattern)
+	puts '=============='
+	puts "Let's begin the game!"
+	puts '=============='
 	while true
-		puts '======='
+		puts '=============='
 		my_board.print_board()
 		sleep 1
 		my_board.next_turn()
@@ -19,5 +20,3 @@ def run
 end
 
 run()
-
-#board = build_new_board(board, size, size)

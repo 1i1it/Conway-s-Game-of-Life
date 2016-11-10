@@ -3,16 +3,27 @@ class Board
 	# I am assuming width and height are the same, since it is an inifinite board. 
 	# number of cells is size*size (e.g size of 6 will create a board of 36)
 
-	def initialize(size, initial_board=nil)
-		
-		@size = size
+	def initialize(initial_board=nil)
+		@size = initial_board && initial_board.length || 10
+		@initial_board = initial_board
 		@cells  = []
-		@size.times do |x|
-			@cells.push([])
-			@size.times do |y|
-				@cells[x].push(Cell.new(self, x, y))
+
+		if @initial_board
+			@size.times do |x|
+				@cells.push([])
+				@size.times do |y|
+					@cells[x].push(Cell.new(self, x, y, @initial_board[x][y]))
+				end
+			end
+		else
+			@size.times do |x|
+				@cells.push([])
+				@size.times do |y|
+					@cells[x].push(Cell.new(self, x, y))
+				end
 			end
 		end
+
 	end
 
 	def print_board()
@@ -36,6 +47,7 @@ class Board
 		board[(x+1) % n] [y-1].value + 
 		board[(x+1) % n] [y].value + 
 		board[(x+1) % n][(y+1) % n].value
+		live_neighbors
 	end
 
 	def next_turn()

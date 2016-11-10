@@ -1,7 +1,11 @@
 class Cell
-	def initialize(board, x, y)
+	def initialize(board, x, y, value=nil)
     @myboard, @x, @y = board, x, y
-    @alive = [0,1].sample
+    if value
+    	@alive = value
+    else
+    	@alive = [0,1].sample
+    end
     @new_generation_value = nil
   end
 
@@ -27,7 +31,7 @@ class Cell
   	#board = @board.cells
   	neighbor_value = @myboard.num_live_neighbors(@x, @y)
 
-	if !@alive #if cell is dead
+	if !is_alive? #if cell is dead
 		if neighbor_value == 3
 			@new_generation_value = 1
 		else 
