@@ -1,5 +1,6 @@
 require './Cell'
 class Board
+	attr_reader :test_array
 	# I am assuming width and height are the same, since it is an inifinite board. 
 	# number of cells is size*size (e.g size of 6 will create a board of 36)
 
@@ -7,6 +8,7 @@ class Board
 		@size = initial_board && initial_board.length || 10
 		@initial_board = initial_board
 		@cells  = []
+		
 
 		if @initial_board
 			@size.times do |x|
@@ -63,4 +65,15 @@ class Board
 			}
 		}
 	end
+
+	def output_array()
+		@test_array = []
+		@size.times do |x|
+			@test_array.push([])
+			@size.times do |y|
+				test_array[x].push(@cells[x][y].value)
+			end
+		end
+		@test_array
+    end
 end
